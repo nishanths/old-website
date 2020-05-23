@@ -10,12 +10,16 @@ SRCDEST := --source site --destination out
 default: b
 
 .PHONY: b
-b:
+b: clean
 	$(JEKYLL) build $(SRCDEST)
 
 .PHONY: s
-s:
+s: clean
 	$(JEKYLL) serve $(SRCDEST)
+
+.PHONY: clean
+clean:
+	rm -rf out/
 
 .PHONY: draft
 draft:
@@ -31,4 +35,6 @@ deps:
 publish:
 	# it seems like out/ should have been committed at least once for this
 	# to work
-	git subtree push --prefix out/ origin master
+	git branch -D master
+	git subtree split --prefix out/ -b master
+	git push -f origin master:master
