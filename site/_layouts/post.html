@@ -17,6 +17,7 @@ layout: default
             {{ page.date | date: "%-d %b %Y" }}
         </time>
       {% else %}
+        <span>Created: </span>
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" title="It was a beautiful day!">
             {{ page.date | date: "%-d %b %Y" }}
         </time>
