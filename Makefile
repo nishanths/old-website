@@ -43,6 +43,7 @@ deprecated-publish:
 .PHONY: publish
 .ONESHELL:
 publish:
+	rm -rf out/.git
 	cd out
 	git init
 	git checkout master
@@ -52,7 +53,6 @@ publish:
 		GIT_COMMITTER_NAME='hardworking bot' GIT_COMMITTER_EMAIL='hardworking-bot@littleroot.org' \
 		git commit -m 'push'
 	git push -f origin master:master
-	rm -rf .git
 
 .PHONY: p
 p: publish
