@@ -2,4 +2,4 @@ Updated copy of old [source](https://github.com/nishanths/nishanths.github.io/tr
 
 ## License
 
-MIT license for code
+Source code is MIT licensed.
