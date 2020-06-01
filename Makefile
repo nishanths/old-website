@@ -1,10 +1,11 @@
 JEKYLL := bundle exec jekyll
 SRCDEST := --source site --destination out
 
-# make changes to styles/content.
+# commit changes to styles and website content.
 # then 'make' to build changes.
-# then commit your changes.
 # then 'make publish' to push to GitHub Pages.
+
+# requires 'make' supporting .ONESHELL (v3.82 or higher).
 
 .PHONY: default
 default: b
@@ -53,4 +54,5 @@ publish:
 	git push -f origin master:master
 	rm -rf .git
 
+.PHONY: p
 p: publish
