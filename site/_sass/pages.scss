@@ -9,12 +9,14 @@ article.post {
     h1.title {
       margin-top: 0;
       margin-bottom: 0;
+      letter-spacing: 0;
     }
 
     .meta {
       margin-top: 0;
       margin-bottom: 3rem;
       font-size: .9rem;
+      color: $color-meta;
     }
   }
 

@@ -5,6 +5,7 @@ $color-link: rgba(68, 187, 255, 1);
 
 // vimeo: :selection with alpha=1
 $color-text: #2d2d2d;
+$color-meta: #999;
 $color-light: #ccc;
 $color-lightest: #eee;
 $color-dot: #70d725;
@@ -147,6 +148,12 @@ hr {
   max-width: 39rem;
 }
 
+
+li .date {
+  font-size: .9rem;
+  color: $color-meta;
+}
+
 @media (max-width: 480px) {
   // smaller margins at smaller screen widths
   body.px3 {
@@ -276,3 +283,4 @@ blockquote p:last-child {
 }
 
 @import "syntax";
+

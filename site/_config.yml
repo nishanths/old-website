@@ -8,7 +8,7 @@ github_username: nishanths
 comments: false
 
 html_lang: en
-permalink: /:title/
+permalink: /post/:title/
 exclude: [".sass_cache"]
 
 # Build settings

@@ -11,7 +11,8 @@ title: Posts
     </h1>
 </header>
 <section class="posts">
-    {% if (site.posts | size) == 0 %}
+    {% assign n = site.posts | size %}
+    {% if n == 0 %}
     <div>
         <emph><p>This section is empty.</p></emph>
     </div>
@@ -21,9 +22,11 @@ title: Posts
         <li>
             <div>
                 <a href="{{ post.url }}">{{ post.title }}</a>
-                {% comment %}
-                <span class="date">{{post.date | date: "%Y-%m-%d"}}</span>
-                {% endcomment %}
+                {% if post.last_modified_at %}
+                <span class="date">({{post.last_modified_at | date: "%Y-%m-%d"}})</span>
+                {% else %}
+                <span class="date">({{post.date | date: "%Y-%m-%d"}})</span>
+                {% endif %}
             </div>
         </li>
     {% endfor %}

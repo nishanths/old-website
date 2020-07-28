@@ -13,8 +13,8 @@ layout: default
     <div class="meta">
       {% if page.last_modified_at %}
         <span>Last update: </span>
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" title="It was a beautiful day!">
-            {{ page.date | date: "%-d %b %Y" }}
+        <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="datePublished" title="It was a beautiful day!">
+            {{ page.last_modified_at | date: "%-d %b %Y" }}
         </time>
       {% else %}
         <span>Created: </span>
