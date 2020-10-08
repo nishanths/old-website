@@ -36,23 +36,23 @@ deps:
 deprecated-publish:
 	# it seems like out/ should have been committed at least once for this
 	# to work
-	git branch -D master
-	git subtree split --prefix out/ -b master
-	git push -f origin master:master
+	git branch -D main
+	git subtree split --prefix out/ -b main
+	git push -f origin main:main
 
 .PHONY: publish
 .ONESHELL:
-publish:
+publish: b
 	rm -rf out/.git
 	cd out
 	git init
-	git checkout master
+	git checkout main
 	git remote add origin git@github.com:nishanths/nishanths.github.io.git
 	git add -A
 	GIT_AUTHOR_NAME='hardworking bot' GIT_AUTHOR_EMAIL='hardworking-bot@littleroot.org' \
 		GIT_COMMITTER_NAME='hardworking bot' GIT_COMMITTER_EMAIL='hardworking-bot@littleroot.org' \
 		git commit -m 'push'
-	git push -f origin master:master
+	git push -f origin main:main
 
 .PHONY: p
 p: publish
